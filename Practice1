@@ -1,0 +1,31 @@
+// Practica 1
+//1. Radio de un circulo
+val circunferencia: Double = 10
+val radio: Double = circunferencia/(2*3.1416)
+println("El radio del circulo es: " + radio)
+
+//2. Numeros primos
+
+
+//3. Dada la variable bird = "tweet", utiliza interpolacion de string para imprimir "Estoy ecribiendo un tweet"
+var bird = "tweet"
+println(s"Estoy escribiendo un, $bird")
+
+//4. Dada la variable mensaje = "Hola Luke yo soy tu padre!" utiliza slilce para extraer la secuencia "Luke"
+var texto = "Hola Luke soy tu padre!"
+texto.slice(5,9)
+
+//5. Cual es la diferencia en value y una variable en scala?
+//Con "val" creamos objetos que solo se pueden leer y con "var" objetos que se pueden leer y escribir.
+val a = new String("A");
+a = "2";
+
+var a = new String("A");
+a = "2";
+
+//6. Dada la tupla ((2,4,5),(1,2,3),(3.1416,23))) regresa el numero 3.1416
+val tupla=((2,4,5),(1,2,3),(3.1416,23))
+println(tupla._3._1) 
+
+
+
