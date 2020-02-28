@@ -71,6 +71,109 @@ In point 6 the keys are assigned to our elements and in point 7 we add elements 
 	// 7 b . Agrega el siguiente valor al mapa("Miguel", 23)
 	nombres += ("Miguel" -> 23)
 	
+Practice 3
+In this practice we perform 5 different ways of performing the Fibonacci. The first was recursive which allows calling itself within its instructions "return fibonacci1 (n-1) + fibonacci1 (n-2)". The second form contains the mathematical object, which contains mathematical functions. The third form was implemented a "for" cycle starting with k = 1 and n will be the value entered. The fourth form will be used in 2 variables within the “for” cycle, whose result was the addition or subtraction of these each time the cycle was iterated. The fifth form created an array with a range.
+//Fiboniacci Recursivo
+ 
+val n = 5
+
+def fibonacci1(n:Int) : Int =
+{
+if (n<2)
+{
+return n
+}
+else
+{
+    return fibonacci1(n-1) + fibonacci1(n-2)
+}
+}  
+
+println(fibonacci1(n))
+
+//Algoritmo 2 Versión con fórmula explícita  
+
+val n = 4
+var phi=((1+math.sqrt(5))/2)
+var j=((math.pow(phi,n)-math.pow((1-phi),n))/(math.sqrt(5)))
+
+def fibonacci2(n:Double) : Double ={
+if (n<2){
+return n
+}
+else {
+    return j
+}
+}
+println(fibonacci2(n))
+
+//Algoritmo 3 Versión iterativa
+
+def fibonacci3(n:Int):Int=
+{
+var n : Int = 6
+var a = 0
+var b = 1
+var c = 0
+var k = 0 
+
+    for(k <- 1 to n)  
+    {
+        
+        c = b + a
+        a = b
+        b = c 
+    }
+     return a
+}
+println(fibonacci3(n))
+
+
+//Algoritmo 4 Versión iterativa 2 variables (Complejidad (O(n))
+
+def fibonacci4(n:Int):Int={
+var n : Int = 10
+var a = 0
+var b = 1
+var k = 0 
+
+
+    for(k <- 1 to n) {
+        b = b + a
+        a = b - a        
+    
+        }
+     return a
+}
+println(fibonacci4(a))
+
+
+//Algoritmo 5 Versión iterativa vector 
+
+var n = 10
+def fibonacci4(n:Int):Int={
+    var arreglo = Array (n+2)
+    var i : Int
+    arreglo (0,0)
+    arreglo (1,1)
+
+    for (i <- 1 to 2 )
+}
+println(fibonacci4(a))
+  def fib(n: Int): Int = {
+  	val n = 10
+    val f: Array[Int] = Array.ofDim[Int](n + 2)
+    f(0) = 0
+    f(1) = 1
+
+    for (i <- 2 to n) {
+      
+      f(i) = f(i - 1) + f(i - 2) 
+    }
+    f(n)
+  }
+  println(fib(8))
+	
 	
 Practice 4
 In this practice, operations are performed on a dataframe to query data and display them, 
