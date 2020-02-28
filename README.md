@@ -1,4 +1,38 @@
 # datos_masivos
+
+Practice 1
+In this practice basic operations are performed in Scala language.
+
+	//1. Radio de un circulo
+	val circunferencia: Double = 10 //The variable is declared, the type of variable is assigned and we give it a value.
+	val radio: Double = circunferencia/(2*3.1416) //the variable is declared for the radius, the type of variable is assigned and 	
+	the formula is made for the radius with the variable declared above
+	println("El radio del circulo es: " + radio) //Print result
+
+	//2. Numeros primos
+
+
+	//3. Dada la variable bird = "tweet", utiliza interpolacion de string para imprimir "Estoy ecribiendo un tweet"
+	var bird = "tweet" //We declare variable bird
+	println(s"Estoy escribiendo un, $bird") //we interpolate the strings through the operator $ and print
+
+	//4. Dada la variable mensaje = "Hola Luke yo soy tu padre!" utiliza slice para extraer la secuencia "Luke"
+	var texto = "Hola Luke soy tu padre!" //we declare the text variable and match it to a sentence
+	texto.slice(5,9)//con la funcion slice extraemos una palabra de la oracion
+
+	//5. Cual es la diferencia en value y una variable en scala?
+	//we declare the variable to be assigned a string
+	val a = new String("A");
+	a = "2";
+	//with "var" objects that can be read and written
+	var a = new String("A");
+	a = "2";
+
+	//6. Dada la tupla ((2,4,5),(1,2,3),(3.1416,23))) regresa el numero 3.1416
+	val tupla=((2,4,5),(1,2,3),(3.1416,23)) //we declare the tuple and values
+	println(tupla._3._1) //the value is extracted giving the coordinate to the tuple and printed
+
+
 Practice 2
 In this work we put into practice the creation, modification and extraction of elements of a list. In point 1 we create the list, in point 2 we build the list with more elements ::, in point 3 by means of the sliced function we extracted only a range of elements.
 In point 4 an arrangement was created where by means of a “for” it shows us the numbers in vertical and another method that we use to create an arrangement with the indicated parameters, in this case it shows us the horizontal sequence.
@@ -19,7 +53,7 @@ In point 6 the keys are assigned to our elements and in point 7 we add elements 
 	var lista = List("rojo", "blanco", "negro","verde","amarillo","azul", "naranja", "perla")
 	lista.slice(3,6)
 	// 4. Crea un arreglo de numero en rango del 1-1000 en pasos de 5 en 5
-  Array.range(1, 1000, 5)
+ 	 Array.range(1, 1000, 5)
 
 	val array = (1 to 1000).by(5)
 	    for(i <- array)
@@ -36,4 +70,61 @@ In point 6 the keys are assigned to our elements and in point 7 we add elements 
 	nombres.keys
 	// 7 b . Agrega el siguiente valor al mapa("Miguel", 23)
 	nombres += ("Miguel" -> 23)
+	
+	
+Practice 4
+In this practice, operations are performed on a dataframe to query data and display them, 
+some of the operations are: describe, select, groupBy, withColumn among others.
+	
+	
+	import org.apache.spark.sql.SparkSession
+
+	val spark = SparkSession.builder().getOrCreate()
+
+	val df = spark.read.option("header", "true").option("inferSchema","true")csv("Netflix_2011_2016.csv")
+
+	df.printSchema()
+
+	df.show()
+
+	//1
+	df.describe ("High").show //Describe the statistical values of the selected column
+	//2
+	df.select ("High","Close").show // Displays the related values of the consulted columns.
+	//3 
+	df.select ("Open","Low").filter("Close < 480").show // Display the related and selected columns and put a filter to only display 	those that are less than 480
+	//4 
+	df.groupBy ("Open").show
+	//5
+	df.first //   return the first column of the dataframe
+	//6 
+	df.columns // Returns the dataframe columns
+	//7 
+	val df2 = df.withColumn("HV Ratio", df("High")+df("Volume")) // Add a column that derives from the high and Volume column
+	//8 
+	df.select(min("Volume")).show() // Choose the volume column min
+	//9 
+	df.select(max("Volume")).show() // Opt the volume column max
+	//10
+	val df2 = df.withColumn("Year", year(df("Date"))) // Create the year column from the date column
+	// 11 
+	val df3 = df.withColumn("Month", month(df("Date"))) // Create the month column from the date column
+	// 12 
+	val df3 = df.withColumn("Day", dayofmonth(df("Date"))) // create the day column from the month and date column
+	// 13
+	al df3 = df.withColumn("Day", dayofyear(df("Date"))) // Create the day column from the year column
+	// 14 
+	df.select(corr($"High", $"Volume")).show() // returns the correlation between the High and Volume column
+	// 15 
+	df.select($"High").take(1) // Take 1 column from the column
+	// 16 
+	df.select("High").repartition().show() //Split the selected column
+	// 17 
+	df.sort($"High".asc).show() // Draw the High column
+	// 18 
+	df.select(avg("High")).show() // Show the high column average
+	// 19 
+	df.filter($"Close" < 480 && $"High" < 480).collectAsList() //create a list from a collection
+	// 20
+	df.select(last_day(df("Date"))).show() // return the last day of the date column
 
