@@ -128,3 +128,24 @@ some of the operations are: describe, select, groupBy, withColumn among others.
 	// 20
 	df.select(last_day(df("Date"))).show() // return the last day of the date column
 
+Unit 1 Exam
+In the exam we are asked to perform the operation of the absolute value of a 3x3 square matrix by determining the difference in the diagonals of the matrix.
+
+	val arr = (11,2,4,4,5,6,10,8,-12) //We declare a list with the established values
+
+	val diagonal_1 =(arr._1)+(arr._5)+(arr._9) // We declare the variable of the first diagonal and obtain the positions of the 							      first diagonal by means of arr ._ (the_position)
+	
+	val diagonal_2 =(arr._3)+(arr._5)+(arr._7) // We declare the variable of the second diagonal and obtain the positions of the 							      second diagonal by means of "arr ._ (the_position)"
+
+
+	// diagonalDifference
+	def diagonalDifference(arr:List[Int], diagonal_1:Int, diagonal_2:Int): Int = {  //The function and its parameters are declared 												  to receive all integers
+	
+		val res = (diagonal_1-diagonal_2) // Declare variable to obtain the difference of diagonal 1 and 2.
+
+		math.abs(res) // utilizamos la funcion del valor absoluto en Scala para obtener el valor positivo
+	}
+
+	diagonalDifference(List(11,2,4,4,5,6,10,8,-12), diagonal_1, diagonal_2) // We send values to respective parameters
+	}
+
