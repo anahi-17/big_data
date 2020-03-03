@@ -9,42 +9,42 @@ df.printSchema()
 df.show()
 
 //1
-df.describe ("High").show //Describe los valores estadisticos de la columna seleccionada
+df.describe ("High").show //Describe the statistical values of the selected column
 //2 
-df.select ("High","Close").show // Despliega los valores relacionados de las columnas consultadas.
+df.select ("High","Close").show // Displays the related values of the consulted columns.
 //3 
-df.select ("Open","Low").filter("Close < 480").show // Despliega la colummnas relacionadas y seleccionadas y pone un filtro para solo desplegar las que sean menor a 480
+df.select ("Open","Low").filter("Close < 480").show // Display the related and selected columns and put a filter to only display 	those that are less than 480
 //4 
 df.groupBy ("Open").show
 //5
-df.first //   retorna la primera columna del dataframe
+df.first //   return the first column of the dataframe
 //6 
-df.columns // Retorna las columnas de dataframe
+df.columns // Returns the dataframe columns
 //7 
-val df2 = df.withColumn("HV Ratio", df("High")+df("Volume")) // Agrega una columna que deriva de la columna high y Volume
+val df2 = df.withColumn("HV Ratio", df("High")+df("Volume")) // Add a column that derives from the high and Volume column
 //8 
-df.select(min("Volume")).show() // Optiene el min de la columna volume 
+df.select(min("Volume")).show() // Choose the volume column min
 //9 
-df.select(max("Volume")).show() // Optiene el max de la columna volume
+df.select(max("Volume")).show() // Opt the volume column max
 //10
-val df2 = df.withColumn("Year", year(df("Date"))) // Crea la columa año apartir de la columna date
+val df2 = df.withColumn("Year", year(df("Date"))) // Create the year column from the date column
 // 11 
-val df3 = df.withColumn("Month", month(df("Date"))) // Crea la columna mes apartir de la columna date
+val df3 = df.withColumn("Month", month(df("Date"))) // Create the month column from the date column
 // 12 
-val df3 = df.withColumn("Day", dayofmonth(df("Date"))) // crea la columna dia apartir de la columna mes y date
+val df3 = df.withColumn("Day", dayofmonth(df("Date"))) // create the day column from the month and date column
 // 13
-al df3 = df.withColumn("Day", dayofyear(df("Date"))) // Crea la columna dia apartir de la columna año
+al df3 = df.withColumn("Day", dayofyear(df("Date"))) // Create the day column from the year column
 // 14 
-df.select(corr($"High", $"Volume")).show() // retorna la correlacion entre la columna High y Volume
+df.select(corr($"High", $"Volume")).show() // returns the correlation between the High and Volume column
 // 15 
-df.select($"High").take(1) // Toma 1 columna de de la columna
+df.select($"High").take(1) // Take 1 column from the column
 // 16 
-df.select("High").repartition().show() //Reparticia la columna seleccionada
+df.select("High").repartition().show() //Split the selected column
 // 17 
-df.sort($"High".asc).show() // Sortea la columa High
+df.sort($"High".asc).show() // Draw the High column
 // 18 
-df.select(avg("High")).show() // Muestra el promedio de la columna high 
+df.select(avg("High")).show() // Show the high column average 
 // 19 
-df.filter($"Close" < 480 && $"High" < 480).collectAsList() //crea una lista apartir de una coleccion. 
+df.filter($"Close" < 480 && $"High" < 480).collectAsList() //create a list from a collection
 //20 
-df.select(last_day(df("Date"))).show() // retorna el ultimo dia de la columna date 
+df.select(last_day(df("Date"))).show() // return the last day of the date column
