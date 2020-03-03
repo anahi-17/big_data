@@ -1,0 +1,7 @@
+Correlation is a technique of statistical analysis of information and, therefore, mathematical. It consists in analyzing the relationship between at least two variables - e.g. two fields from a database or from a log or raw data-. The result should show the strength and sense of the relationship.
+The so-called "correlation coefficients" are used to analyze the relationship between variables. They are made on quantitative or qualitative variables. This will determine whether Pearson's correlation coefficient, Spearman's, or Kendall's correlation coefficient are calculated.
+The correlation is based on the relationship between different data, with different backgrounds, which gives the key to understanding reality and knowing the future from forecasts and forecasts
+Massive data is increasingly present in our lives, and its way of using it implies changing our mentality: from cause to correlation.
+
+Example
+An analysis of frequencies: Make an account, what are technically called «ordinary or accumulated frequencies» and «absolute or relative». That in their multidimensional mode they are completed with the «marginal and conditional frequencies». This is the most common case, reflected in the typical SQL or Python statement whose result is a COUNT or SUM aggregate.
