@@ -1,0 +1,23 @@
+A formal definition of variances can be described as follows:
+The variances describe the relationships of sub-types of complex types and the co-variance or covariance relations describe the flexibility in which one type can be considered sub-type of another type in a generic definition.
+Counter-variance or counter-variance is the opposite of covariance because it defines the flexibility of making a type, sub-type of its sub-type, because of the relationship between them of sub-types of their component types.
+
++ indicates covariance
+- indicates countervariance
+if not indicated, there is invariance in the type
+So,
++ A indicates that the instantiated type must be type A itself or a subtype of A
+-A indicates that the instantiated type must be type A itself or a supertype of A
+A indicates that the instantiated type must be type A itself
+
+Examples:
+abstract class Sequence [+ A] {
+def append (x: Sequence [A]): Sequence [A] // **** error: illegal variance: ‘A’ occurs in contravariant position.
+}
+It fails because "append" forces supertype A
+To correct it:
+
+abstract class Sequence [+ A] {
+def append [B>: A] (x: Sequence [B]): Sequence [B]
+}
+It works because "append" supports any subtype of A (which corresponds to + A).
