@@ -258,7 +258,7 @@ Example
 An analysis of frequencies: Make an account, what are technically called «ordinary or accumulated frequencies» and «absolute or relative». That in their multidimensional mode they are completed with the «marginal and conditional frequencies». This is the most common case, reflected in the typical SQL or Python statement whose result is a COUNT or SUM aggregate.
 
 
-### Collaborators @github
+### Collaborators [github]
 * anahi-17
 
 * fernando-123
