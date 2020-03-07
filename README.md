@@ -224,7 +224,41 @@ math.abs (res) // we use the absolute value function in Scala to obtain the posi
 diagonalDifference (List (11,2,4,4,5,6,10,8, -12), diagonal_1, diagonal_2) // We send values ​​to respective parameters
 }
 
-### Collaborators @github
-*anahi-17
+## Correlation 
+Correlation is a technique of statistical analysis of information and, therefore, mathematical. It consists in analyzing the relationship between at least two variables - e.g. two fields from a database or from a log or raw data-. The result should show the strength and sense of the relationship.
+The so-called "correlation coefficients" are used to analyze the relationship between variables. They are made on quantitative or qualitative variables. This will determine whether Pearson's correlation coefficient, Spearman's, or Kendall's correlation coefficient are calculated.
+The correlation is based on the relationship between different data, with different backgrounds, which gives the key to understanding reality and knowing the future from forecasts and forecasts
+Massive data is increasingly present in our lives, and its way of using it implies changing our mentality: from cause to correlation.
 
-*fernando-123
+## Variance
+A formal definition of variances can be described as follows:
+The variances describe the relationships of sub-types of complex types and the co-variance or covariance relations describe the flexibility in which one type can be considered sub-type of another type in a generic definition.
+Counter-variance or counter-variance is the opposite of covariance because it defines the flexibility of making a type, sub-type of its sub-type, because of the relationship between them of sub-types of their component types.
+
++ indicates covariance
+- indicates countervariance
+if not indicated, there is invariance in the type
+So,
++ A indicates that the instantiated type must be type A itself or a subtype of A
+-A indicates that the instantiated type must be type A itself or a supertype of A
+A indicates that the instantiated type must be type A itself
+
+Examples:
+abstract class Sequence [+ A] {
+def append (x: Sequence [A]): Sequence [A] // **** error: illegal variance: ‘A’ occurs in contravariant position.
+}
+It fails because "append" forces supertype A
+To correct it:
+
+abstract class Sequence [+ A] {
+def append [B>: A] (x: Sequence [B]): Sequence [B]
+}
+It works because "append" supports any subtype of A (which corresponds to + A).
+Example
+An analysis of frequencies: Make an account, what are technically called «ordinary or accumulated frequencies» and «absolute or relative». That in their multidimensional mode they are completed with the «marginal and conditional frequencies». This is the most common case, reflected in the typical SQL or Python statement whose result is a COUNT or SUM aggregate.
+
+
+### Collaborators @github
+* anahi-17
+
+* fernando-123
