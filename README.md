@@ -33,3 +33,25 @@ neural network algorithms, which pass to a simplified representation
 from the data to the next layer.
 Convolutional networks make a deep learning neural network
 have the ability to recognize animals, humans and objects within images.
+
+## Homework 3
+### Pipeline
+Pipeline architecture (based on filters) consists of transforming a data flow into a process comprised of several sequential phases, the input of each being the output of the previous one.
+This architecture is very common in the development of programs for the command interpreter, since you can easily connect commands with pipes (pipe).
+The pipe syntax, pipeline, allows connections to be clearly arranged in a sequence of multiple operations. It is a string syntax, so the operator% & gt; % takes the output ('the output') of a code statement and the conversion into the input ('the argument') of a new statement.
+
+When describing the code we can think of it as "THEN".
+
+The output (result) of the code to the left of%>% is argument of the function to the right.
+
+### Confusion matrix
+The confusion matrix of a problem of class n is an nxn matrix in which the rows are named according to the real classes and the columns, according to the classes predicted by the model. It is used to explicitly show when one class is confused with another. Therefore, it allows you to work separately with different types
+of mistake.
+For example, in a binary model that seeks to predict whether a mushroom is poisonous or not, based on certain physical characteristics of these we will consider the real classes p (positive = the mushroom is poisonous) and n (negative = the mushroom is edible), and
+the classes predicted by the model, S (yes, it is poisonous), or N (no, it is edible).
+In this way, the confusion matrix for this model has its rows labeled with the real classes, and its columns with those predicted by the model. It would look like this:
+
+Thus, the main diagonal contains the sum of all the predictions
+correct (the model says "S" and hits, is poisonous, or says "N" and hits also, is
+edible). The other diagonal reflects the classifier errors: false positives or
+"True positives" (says that it is poisonous "S", but in reality it is not "n"), or false negatives or "false negatives" (says that it is edible "N", but in fact it is poisonous "p" ).
