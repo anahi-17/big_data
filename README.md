@@ -96,16 +96,26 @@ The pipe syntax, pipeline, allows connections to be clearly arranged in a sequen
 When describing the code we can think of it as "THEN".
 
 The output (result) of the code to the left of%>% is argument of the function to the right.
-https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/pipeline.PNG
-
+<p align="center">
+<img width="450"
+src=https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/pipeline.PNG
+ssl=1
+raw=true">
+</p> 
+         
 ### Confusion matrix
 The confusion matrix of a problem of class n is an nxn matrix in which the rows are named according to the real classes and the columns, according to the classes predicted by the model. It is used to explicitly show when one class is confused with another. Therefore, it allows you to work separately with different types
 of mistake.
 For example, in a binary model that seeks to predict whether a mushroom is poisonous or not, based on certain physical characteristics of these we will consider the real classes p (positive = the mushroom is poisonous) and n (negative = the mushroom is edible), and
 the classes predicted by the model, S (yes, it is poisonous), or N (no, it is edible).
 In this way, the confusion matrix for this model has its rows labeled with the real classes, and its columns with those predicted by the model. It would look like this:
-https://4.bp.blogspot.com/-v2ir_F1mlVU/WmCI1w8w7gI/AAAAAAAAH7M/jIWYNqCWoosjWeFCX6GucSl-DzPnlEOggCLcBGAs/s1600/matriz-confusion-sencilla.JPG
-
+<p align="center">
+<img width="450"
+src=https://4.bp.blogspot.com/-v2ir_F1mlVU/WmCI1w8w7gI/AAAAAAAAH7M/jIWYNqCWoosjWeFCX6GucSl-DzPnlEOggCLcBGAs/s1600/matriz-confusion-sencilla.JPG
+ssl=1
+raw=true">
+</p> 
+         
 Thus, the main diagonal contains the sum of all the predictions
 correct (the model says "S" and hits, is poisonous, or says "N" and hits also, is
 edible). The other diagonal reflects the classifier errors: false positives or
