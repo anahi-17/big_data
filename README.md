@@ -473,6 +473,72 @@ println (s "Coefficients: $ {lsvcModel.coefficients} Intercept: $ {lsvcModel.int
 ## Practice 6 
 ### One-vs-Rest classifier (a.k.a. One-vs-All)
 
+// We import the libraries and packages necessary to load the program.
+
+``
+import org.apache.spark.ml.classification. {LogisticRegression, OneVsRest}
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.sql.SparkSession
+``
+
+// Create an instance of the spark session
+
+``
+val spark = SparkSession.builder.appName ("OneVsRestExample"). getOrCreate ()
+``
+
+// Load data set of our
+
+``
+Val Data = spark.read.format ("libsvm"). load ("sample_multiclass_classification_data.txt")
+Data sample ()
+``
+
+// Later we carry out our training with our data as follows:
+
+// divide the data into training and test sets using an array (20% for testing and 80% training).
+
+``
+Val Array (stream, test) = inputData.randomSplit (Array (0.8, 0.2))
+``
+
+// We instantiate the base of the classifier which will contain the maximum number of interactions, tolerance and interceptions adjustment.
+
+``
+val = new classifier LogisticRegression (). setMaxIter (10) .setTol (1E-6) .setFitIntercept (true)
+``
+
+// We generate the OneVsRest instances which will bring us the classifier
+
+``
+val ovr = new OneVsRest (). setClassifier (classifier)
+``
+
+// Training of the multiclass model generating an adjustment to the training data
+
+``
+val ovrModel = ovr.fit (train)
+``
+
+// We transform the test data into the prediction method
+
+``
+predictions val = ovrModel.transform (test)
+``
+
+// we generate the evaluator which we will bring the instance name of the metric
+
+``
+val evaluator = new MulticlassClassificationEvaluator (). setMetricName ("precision")
+``
+
+// calculate the classification error in the test data.
+
+``
+val precision = evaluator.evaluate (predictions)
+println (s "Test error = $ {1 - precision}")
+``
+
 ## Practice 7 
 ### Naive Bayes
 ``
