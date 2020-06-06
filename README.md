@@ -539,3 +539,4 @@ predictionAndLabels.show()
 
 //8.- We print the accuracy of the model prediction.
 println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+
