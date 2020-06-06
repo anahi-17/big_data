@@ -1,5 +1,16 @@
 # datos_masivos
 ## Index
+- [Homework 1](#Homework-1)
+- [Homework 2](#IHomework-2)
+- [Homework 3](#Homework-3)
+- [Practice 1](#practice-1)
+- [Practice 2](#practice-2)
+- [Practice 3](#practice-3)
+- [Practice 4](#practice-4)
+- [Practice 5](#practice-5)
+- [Practice 6](#practice-6)
+- [Practice 7](#practice-7)
+- [Evaluation](#evaluation)
 
 
 ## Homework 1
@@ -409,3 +420,5 @@ println (s "Coefficients: $ {lsvcModel.coefficients} Intercept: $ {lsvcModel.int
 
 ## Practice 7 
 ### Naive Bayes
+
+## Evaluation
