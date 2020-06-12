@@ -1,6 +1,8 @@
-**Evaluation 3
+## Big Data
 
-***The goal of k-means is simple: it groups similar data points in order to discover underlying patterns. To achieve this goal, k-means searches for a fixed number (k) of groupings (clusters) in the dataset.
+### The goal of k-means is simple: it groups similar data points in order to discover underlying patterns. To achieve this goal, k-means searches for a fixed number (k) of groupings (clusters) in the dataset.
+
+### Evaluation 3
 
 ``
 import org.apache.spark.sql.SparkSession
@@ -47,3 +49,6 @@ println (s "Within Set Sum of Squared Errors = $ WSSSE")
 println ("Cluster Centers:")
 model.clusterCenters.foreach (println)
 ``
+### Collaborators
+* **anahi-17** - [Github](https://github.com/anahi-17)
+* **fernando-123** - [Github](https://github.com/fernando-123)
