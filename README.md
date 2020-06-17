@@ -4,7 +4,7 @@
 
 ### Evaluation 3
 
-
+ $ example on $
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.ml.feature.VectorAssembler
 import org.apache.spark.ml.feature.StringIndexer
@@ -48,6 +48,7 @@ println (s "Within Set Sum of Squared Errors = $ WSSSE")
 // Show the results
 println ("Cluster Centers:")
 model.clusterCenters.foreach (println)
+ $ example off $
 
 ### Collaborators
 * **anahi-17** - [Github](https://github.com/anahi-17)
