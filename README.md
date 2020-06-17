@@ -1,7 +1,7 @@
 # datos_masivos
 ## Index
 - [Homework 1](#Homework-1)
-- [Homework 2](#IHomework-2)
+- [Homework 2](#Homework-2)
 - [Homework 3](#Homework-3)
 - [Practice 1](#practice-1)
 - [Practice 2](#practice-2)
