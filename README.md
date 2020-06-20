@@ -1,11 +1,11 @@
 Index
 
 - [Introduction](#Introduction)
-- [Theoretical framework of algorithms](#Theoretical_framework_of_algorithms)
+- [Theoretical framework of algorithms](#Theoretical-framework-of-algorithms)
 - [SVM ](#SVM)
-- [Decision Tree](#Decision_Tree)
-- [Logistic Regression](#Logistic_Regression)
-- [Multilayer Perceptron](#Multilayer_Perceptron)
+- [Decision Tree](#Decision-Tree)
+- [Logistic Regression](#Logistic-Regression)
+- [Multilayer Perceptron](#Multilayer-Perceptron)
 - [Implementation](#Implementation)
 - [Conclusions](#Conclusions)
 - [References ](#References)
