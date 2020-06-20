@@ -1,14 +1,15 @@
 Index
 
 - [Introduction](#Introduction)
-- [Theoretical framework of algorithms ](#Theoretical_framework_of_algorithms)
+- [Theoretical framework of algorithms](#Theoretical_framework_of_algorithms)
 - [SVM ](#SVM)
 - [Decision Tree](#Decision_Tree)
 - [Logistic Regression](#Logistic_Regression)
-- [Multilayer perceptron](#Multilayer_perceptron)
-- [Implementation ](#Implementation)
+- [Multilayer Perceptron](#Multilayer_Perceptron)
+- [Implementation](#Implementation)
 - [Conclusions](#Conclusions)
 - [References ](#References)
+- [Collaborators](#Collaborators)
 
 ## Introduction
 This document proposes the use of different machine learning algorithms (machine learning) as they are very common in solving a problem. A brief explanation of what each algorithm consists of as well as application examples will be given.
@@ -19,27 +20,27 @@ In this document we will take the information from the data that is related to d
 Marketing campaigns were based on phone calls. Often, more than one contact with the same client was required, to access whether the product (term bank deposit) would be (or not) subscribed [12].
 Input variables:
 Bank client data:
-1 - age (numeric)
-2 - job: type of job (categorical: "administrator", "unknown", "unemployed", "management", "domestic worker", "entrepreneur", "student",
+1. age (numeric)
+2. job: type of job (categorical: "administrator", "unknown", "unemployed", "management", "domestic worker", "entrepreneur", "student",
 "worker", "self-employed", "retired", "technician", "services")
-3 - marital: marital status (categorical: "married", "divorced", "single"; note: "divorced" means divorced or widowed)
-4 - education (categorical: "unknown", "secondary", "primary", "tertiary")
-5 - default: do you have credit in default? (binary: "yes", "no")
-6 - balance: average annual balance, in euros (numeric)
-7 - home: do you have a home loan? (binary: "yes", "no")
-8 - loan: do you have a personal loan? (binary: "yes", "no")
+3. marital: marital status (categorical: "married", "divorced", "single"; note: "divorced" means divorced or widowed)
+4. education (categorical: "unknown", "secondary", "primary", "tertiary")
+5. default: do you have credit in default? (binary: "yes", "no")
+6. balance: average annual balance, in euros (numeric)
+7. home: do you have a home loan? (binary: "yes", "no")
+8. loan: do you have a personal loan? (binary: "yes", "no")
 related to the last contact of the current campaign:
-9 - contact: type of contact communication (categorical: "unknown", "telephone", "mobile")
-10 days: last contact day of the month (numeric)
-11 months: last contact of the year of the year (categorical: "Jan", "Feb", "Mar", ..., "Nov", "Dec")
-12 - duration: duration of the last contact, in seconds (numeric)
+9. contact: type of contact communication (categorical: "unknown", "telephone", "mobile")
+10. days: last contact day of the month (numeric)
+11. months: last contact of the year of the year (categorical: "Jan", "Feb", "Mar", ..., "Nov", "Dec")
+12. duration: duration of the last contact, in seconds (numeric)
 other attributes:
-13 - campaign: number of contacts made during this campaign and for this customer (numeric, includes the last contact)
-14 days: number of days that passed after the customer was contacted for the last time since a previous campaign (numeric, -1 means that the client was not previously contacted)
-15 - previous: number of contacts made before this campaign and for this client (numerical)
-16 - poutcome: result of the marketing campaign previous (categorical: "unknown", "other", "failure", "success")
+13. campaign: number of contacts made during this campaign and for this customer (numeric, includes the last contact)
+14. days: number of days that passed after the customer was contacted for the last time since a previous campaign (numeric, -1 means that the client was not previously contacted)
+15. previous: number of contacts made before this campaign and for this client (numerical)
+16. poutcome: result of the marketing campaign previous (categorical: "unknown", "other", "failure", "success")
 Output variable (desired goal):
-17 - and - does the client Have you signed a term deposit? (binary: "yes", "no")
+17. and - does the client Have you signed a term deposit? (binary: "yes", "no")
 The data we use is found in [13]. 
 
 The algorithms used for this work are the following:
@@ -70,7 +71,7 @@ This algorithm helps us to know the probability of whether an example belongs to
 Here we can indicate that z is the input to the network and results from the linear combination of the weights and the respective characteristics of each example, that is, z = wT
 x = w0 + w1x1 + ... + wmxm. Each characteristic will have a weight because each one of them will influence more or less for the final decision of which class it belongs to [14].
 
-### Multilayer perceptron
+### Multilayer Perceptron
 
 The perceptron is very useful for classifying data sets that are linearly separable. They encounter serious limitations with data sets that do not fit this pattern as discovered with the XOR problem.  Logic functions typically have two inputs and one output that depends on the values ​​of the inputs. The inputs and outputs can take two values: True and False, or 0 and 1. Thus for each logical function there is a table that indicates what the output will be given the combination of the input values [9].
 The multilayer perceptron (MLP) breaks this constraint and classifies data sets that are not linearly separable. The Perceptron consists of an input layer and an output layer that are fully connected. MLPs have the same input and output layers, but can have multiple layers hidden between the layers mentioned above.
@@ -93,20 +94,15 @@ Spark offers us an interactive shell in Scala with which we can experiment and t
 ## Results
 
 The following table shows the results of 10 iterations with each of the algorithms, the first is SVM, which showed no change with 88% accuracy, the second is Decision Tree in which the results were more noticeable, varying between the 88% and 89% accuracy, in the following two algorithms which are Logistic regression and Multilayer Perceptron there was no change in accuracy, showing their result with 88%.
-<p align="center">
-<img width="450"
-src=https://i0.wp.com/www.aprendemachinelearning.com/wp-content/uploads/2017/11/icon_algoritmos_regresion.png?resize=300%2C150&ssl=1
-raw=true">
-</p> 
+
+![Captura de pantalla 2020-06-20 a la(s) 14 27 11](https://user-images.githubusercontent.com/60456115/85213023-d0f6bf80-b30d-11ea-802c-d4200f665fd4.png)
 
 
 The following table shows the execution time of each of the algorithms mentioned above.
 SVM had a minimal variation between 10 and 12 seconds, dominating the runtime of 11 seconds, Decision Tree from 11 to 15 seconds, Logistic Regression from 10 to 12 seconds, as well as SVM dominating 11 seconds, and Multilayer perceptron from 11-14 seconds.
-<p align="center">
-<img width="450"
-src=https://i0.wp.com/www.aprendemachinelearning.com/wp-content/uploads/2017/11/icon_algoritmos_regresion.png?resize=300%2C150&ssl=1
-raw=true">
-</p> 
+
+![Captura de pantalla 2020-06-20 a la(s) 13 32 52](https://user-images.githubusercontent.com/60456115/85213052-1fa45980-b30e-11ea-95d2-9c95cfcd5e73.png)
+
          
 ## Conclusions
 Through the comparative classification study that was carried out, we were able to identify the precision measure of the algorithms and the comparison of this precision. 
@@ -117,18 +113,31 @@ Although machine learning algorithms are very useful, with these tables we can f
 ## References
 [1] Muñoz López, M. Predictor para el Síndrome de Lynch: Comparativa y análisis de algoritmos de 
 machine learning.
+
 [2 ]Zubiaga, A., Fresno, V., & Martínez, R. (2009). Comparativa de Aproximaciones a SVM Semisupervisado Multiclase para Clasificación ́on de Páginas Web. Procesamiento del lenguaje natural, (42), 63-70.
+
 [3] Garre, M., Cuadrado, J. J., Sicilia, M. A., Rodríguez, D., & Rejas, R. (2007). Comparación de diferentes algoritmos de clustering en la estimación de coste en el desarrollo de software. REICIS. Revista Española de Innovación, Calidad e Ingeniería del Software, 3(1), 6-22.
+
 [4] Safavian, S.R., Landgrebe, D.: A survey of decision tree classifier methodology. IEEE transactions on systems, man, and cybernetics 21(3), 660–674 (1991)
+
 [5] G. R. Dattatreya and L. N. Kanal, " Decision trees in pattern recognition," In Progress in Pattern Recognition 2, Kanal and Rosenfeld (eds.) , Elsevier Science Publisher B.V., 189-239 (1985).
+
 [6] Betancourt, G. A. (2005). Las máquinas de soporte vectorial (SVMs). Scientia et technica, 1(27).
+
 [7] https://www.uv.mx/anmarin/slides/180205Gonzalez.pdf
+
 [8] Jara Estupiñan, J., Giral, D., & Martínez Santa, F. (2016). Implementation of algorithms based on support vector machine (SVM) for electric systems: topic review. Tecnura, 20(48), 149-170.
+
 [9]http://powerhousedm.blogspot.com/2007/10/el-problema-xor.html#:~:text=El%20problema%20XOR,problemas%20de%20reconocimiento%20de%20patrones.&text=El%20resultado%20de%20XOR%20ser%C3%A1,sino%20ser%C3%A1%20Falso%20(0).
+
 [10]https://deepai.org/machine-learning-glossary-and-terms/multilayer-perceptron
+
 [11] https://www.statisticssolutions.com/what-is-logistic-regression/
+
 [12]  [Moro et al., 2011] S. Moro, R. Laureano and P. Cortez
+
 [13] https://archive.ics.uci.edu/ml/datasets/Bank+Marketing.
+
 [14]https://eprints.ucm.es/48800/1/Memoria%20TFM%20Machine%20Learning_Juan_Zamorano_para_difundir%20%282%29.pdf
 
 ### Collaborators
